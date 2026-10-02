@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        بخش‌های هیئت هندبال قائمشهر
+    </title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --navy: #061936;
+            --navy2: #0b2854;
+            --blue: #16457e;
+            --white: #fff;
+            --light: #f4f7fb;
+            --text: #172033;
+            --gray: #68758a;
+            --border: #e3e8f0;
+            --green: #16a34a;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 36px));
+            margin: auto;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            height: 76px;
+            background: rgba(6,25,54,.96);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .navbar {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            background: white;
+            color: var(--navy);
+            border-radius: 10px;
+            font-size: 22px;
+        }
+
+        .logo small {
+            display: block;
+            color: #aabbd5;
+            font-size: 9px;
+            font-weight: normal;
+        }
+
+        nav {
+            display: flex;
+            gap: 23px;
+        }
+
+        nav a {
+            color: #dbe5f4;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .home-btn {
+            background: white;
+            color: var(--navy);
+            padding: 8px 16px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: none;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .page-hero {
+            margin-top: 76px;
+            padding: 110px 0;
+            color: white;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(6,25,54,.94),
+                    rgba(11,40,84,.92)
+                );
+        }
+
+        .page-hero span {
+            color: #aec7e8;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(35px, 6vw, 58px);
+            margin: 10px 0;
+        }
+
+        .page-hero p {
+            color: #c5d2e5;
+            max-width: 600px;
+            margin: auto;
+            font-size: 14px;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .gray {
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            color: var(--navy);
+            font-size: 32px;
+            margin: 5px 0;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        /* ================= QUICK MENU ================= */
+
+        .quick {
+            margin-top: -35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .quick-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 10px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(6,25,54,.07);
+            transition: .3s;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-5px);
+            background: var(--navy);
+            color: white;
+        }
+
+        .quick-card strong {
+            display: block;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .quick-card span {
+            font-size: 11px;
+        }
+
+        /* ================= PLAYERS ================= */
+
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .player {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .player:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(6,25,54,.1);
+        }
+
+        .player-img {
+            height: 270px;
+        }
+
+        .player-img img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .player-info {
+            padding: 18px;
+        }
+
+        .player-info h3 {
+            color: var(--navy);
+            font-size: 17px;
+        }
+
+        .player-info p {
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        .number {
+            display: inline-block;
+            margin-top: 8px;
+            background: var(--navy);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+        }
+
+        /* ================= HONORS ================= */
+
+        .honors-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px;
+        }
+
+        .honor {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            padding: 30px 15px;
+            text-align: center;
+        }
+
+        .trophy {
+            width: 65px;
+            height: 65px;
+            background: var(--navy);
+            color: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 27px;
+            margin: auto;
+        }
+
+        .honor h3 {
+            color: var(--navy);
+            margin-top: 15px;
+        }
+
+        .honor p {
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        /* ================= CALENDAR ================= */
+
+        .calendar {
+            display: grid;
+            gap: 12px;
+        }
+
+        .game {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            padding: 18px;
+            display: grid;
+            grid-template-columns: 110px 1fr 150px 100px;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .date {
+            color: var(--navy);
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .game-info strong {
+            color: var(--navy);
+            display: block;
+        }
+
+        .game-info span {
+            color: var(--gray);
+            font-size: 10px;
+        }
+
+        .hall {
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        .status {
+            background: #dcfce7;
+            color: var(--green);
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        /* ================= NOTICES ================= */
+
+        .notice-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .notice {
+            background: white;
+            border: 1px solid var(--border);
+            border-right: 4px solid var(--navy);
+            border-radius: 9px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .notice h3 {
+            color: var(--navy);
+            font-size: 15px;
+        }
+
+        .notice p {
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        .notice-date {
+            color: var(--gray);
+            white-space: nowrap;
+            font-size: 10px;
+        }
+
+        /* ================= REGISTRATION ================= */
+
+        .register {
+            background: var(--navy);
+        }
+
+        .register-box {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .register-text {
+            color: white;
+        }
+
+        .register-text h2 {
+            font-size: 37px;
+            margin-bottom: 15px;
+        }
+
+        .register-text p {
+            color: #b9c8dc;
+            font-size: 13px;
+        }
+
+        .form {
+            background: white;
+            padding: 27px;
+            border-radius: 14px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 11px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            outline: none;
+            font-size: 11px;
+            color: var(--text);
+        }
+
+        textarea {
+            height: 100px;
+            margin-top: 11px;
+            resize: none;
+        }
+
+        .submit {
+            width: 100%;
+            margin-top: 11px;
+            padding: 13px;
+            border: 0;
+            border-radius: 7px;
+            background: var(--navy);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 190px 190px;
+            gap: 10px;
+        }
+
+        .gallery div {
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .gallery div:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery img {
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .gallery div:hover img {
+            transform: scale(1.07);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-card {
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            padding: 28px;
+        }
+
+        .contact-card h3 {
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--navy);
+        }
+
+        .map {
+            min-height: 300px;
+            border-radius: 13px;
+            background:
+                linear-gradient(
+                    rgba(6,25,54,.8),
+                    rgba(6,25,54,.8)
+                ),
+                url("https://images.unsplash.com/photo-1524666041070-9e7b2c4c0f50?auto=format&fit=crop&w=1000&q=80");
+            background-size: cover;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #031025;
+            color: #aab8cc;
+            padding: 35px 0 18px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        footer p {
+            font-size: 11px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:1000px) {
+
+            .quick-grid {
+                grid-template-columns: repeat(3,1fr);
+            }
+
+            .players-grid,
+            .honors-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .game {
+                grid-template-columns: 90px 1fr 100px;
+            }
+
+            .hall {
+                display: none;
+            }
+
+        }
+
+        @media(max-width:750px) {
+
+            nav {
+                position: absolute;
+                top: 76px;
+                right: 0;
+                width: 100%;
+                background: var(--navy);
+                padding: 20px;
+                display: none;
+                flex-direction: column;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .quick-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .register-box,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .register-text {
+                text-align: center;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(3,180px);
+            }
+
+            .gallery div:first-child {
+                grid-column: span 2;
+                grid-row: auto;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+
+        @media(max-width:500px) {
+
+            section {
+                padding: 65px 0;
+            }
+
+            .players-grid,
+            .honors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .game {
+                grid-template-columns: 70px 1fr 75px;
+                gap: 8px;
+                padding: 13px;
+            }
+
+            .notice {
+                display: block;
+            }
+
+            .notice-date {
+                display: block;
+                margin-top: 8px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5,200px);
+            }
+
+            .gallery div:first-child {
+                grid-column: auto;
+            }
+
+            .page-hero {
+                padding: 80px 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                🤾
+            </div>
+
+            <div>
+                هیئت هندبال قائمشهر
+                <small>
+                    QAEMSHAHR HANDBALL
+                </small>
+            </div>
+
+        </a>
+
+        <nav id="nav">
+
+            <a href="index.html">
+                صفحه اصلی
+            </a>
+
+            <a href="#players">
+                بازیکنان
+            </a>
+
+            <a href="#honors">
+                افتخارات
+            </a>
+
+            <a href="#calendar">
+                تقویم مسابقات
+            </a>
+
+            <a href="#notices">
+                اطلاعیه‌ها
+            </a>
+
+            <a href="#register">
+                ثبت‌نام
+            </a>
+
+            <a href="#contact">
+                تماس
+            </a>
+
+            <a href="index.html" class="home-btn">
+                خانه
+            </a>
+
+        </nav>
+
+        <div class="menu" onclick="toggleMenu()">
+            ☰
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <span>
+            QAEMSHAHR HANDBALL
+        </span>
+
+        <h1>
+            مرکز اطلاعات هیئت
+        </h1>
+
+        <p>
+            بازیکنان، افتخارات، مسابقات، اطلاعیه‌ها،
+            ثبت‌نام، گالری و راه‌های ارتباطی
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK MENU
+===================================================== -->
+
+<div class="quick">
+
+    <div class="container">
+
+        <div class="quick-grid">
+
+            <a href="#players" class="quick-card">
+                <strong>👥</strong>
+                <span>بازیکنان</span>
+            </a>
+
+            <a href="#honors" class="quick-card">
+                <strong>🏆</strong>
+                <span>افتخارات</span>
+            </a>
+
+            <a href="#calendar" class="quick-card">
+                <strong>📅</strong>
+                <span>مسابقات</span>
+            </a>
+
+            <a href="#notices" class="quick-card">
+                <strong>📢</strong>
+                <span>اطلاعیه‌ها</span>
+            </a>
+
+            <a href="#register" class="quick-card">
+                <strong>📝</strong>
+                <span>ثبت‌نام</span>
+            </a>
+
+            <a href="#contact" class="quick-card">
+                <strong>📞</strong>
+                <span>تماس</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PLAYERS
+===================================================== -->
+
+<section id="players">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                PLAYERS
+            </span>
+
+            <h2>
+                بازیکنان منتخب
+            </h2>
+
+            <p>
+                معرفی بخشی از بازیکنان هیئت
+            </p>
+
+        </div>
+
+        <div class="players-grid">
+
+            <div class="player">
+
+                <div class="player-img">
+                    <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=700&q=80">
+                </div>
+
+                <div class="player-info">
+                    <h3>
+                        امیر محمدی
+                    </h3>
+
+                    <p>
+                        تیم بزرگسالان
+                    </p>
+
+                    <span class="number">
+                        شماره ۷
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="player">
+
+                <div class="player-img">
+                    <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=700&q=80">
+                </div>
+
+                <div class="player-info">
+                    <h3>
+                        علی حسینی
+                    </h3>
+
+                    <p>
+                        تیم جوانان
+                    </p>
+
+                    <span class="number">
+                        شماره ۱۰
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="player">
+
+                <div class="player-img">
+                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=700&q=80">
+                </div>
+
+                <div class="player-info">
+                    <h3>
+                        محمد کریمی
+                    </h3>
+
+                    <p>
+                        تیم نوجوانان
+                    </p>
+
+                    <span class="number">
+                        شماره ۹
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="player">
+
+                <div class="player-img">
+                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=700&q=80">
+                </div>
+
+                <div class="player-info">
+                    <h3>
+                        رضا احمدی
+                    </h3>
+
+                    <p>
+                        تیم جوانان
+                    </p>
+
+                    <span class="number">
+                        شماره ۱۱
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HONORS
+===================================================== -->
+
+<section class="gray" id="honors">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                HONORS
+            </span>
+
+            <h2>
+                افتخارات هیئت
+            </h2>
+
+            <p>
+                بخشی از موفقیت‌ها و دستاوردهای ورزشی
+            </p>
+
+        </div>
+
+        <div class="honors-grid">
+
+            <div class="honor">
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+                <h3>
+                    قهرمانی استان
+                </h3>
+
+                <p>
+                    مقام اول مسابقات استانی
+                </p>
+
+            </div>
+
+
+            <div class="honor">
+
+                <div class="trophy">
+                    🥇
+                </div>
+
+                <h3>
+                    قهرمانی جوانان
+                </h3>
+
+                <p>
+                    مقام اول رده جوانان
+                </p>
+
+            </div>
+
+
+            <div class="honor">
+
+                <div class="trophy">
+                    🥈
+                </div>
+
+                <h3>
+                    نایب قهرمانی
+                </h3>
+
+                <p>
+                    مسابقات منطقه‌ای
+                </p>
+
+            </div>
+
+
+            <div class="honor">
+
+                <div class="trophy">
+                    ⭐
+                </div>
+
+                <h3>
+                    استعداد برتر
+                </h3>
+
+                <p>
+                    معرفی بازیکنان به سطوح بالاتر
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CALENDAR
+===================================================== -->
+
+<section id="calendar">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                MATCH CALENDAR
+            </span>
+
+            <h2>
+                تقویم مسابقات
+            </h2>
+
+            <p>
+                برنامه مسابقات پیش‌رو
+            </p>
+
+        </div>
+
+        <div class="calendar">
+
+            <div class="game">
+
+                <div class="date">
+                    ۲۰ مهر
+                </div>
+
+                <div class="game-info">
+
+                    <strong>
+                        قائمشهر × ساری
+                    </strong>
+
+                    <span>
+                        لیگ استان
+                    </span>
+
+                </div>
+
+                <div class="hall">
+                    سالن قائمشهر
+                </div>
+
+                <div class="status">
+                    ۱۷:۰۰
+                </div>
+
+            </div>
+
+
+            <div class="game">
+
+                <div class="date">
+                    ۲۵ مهر
+                </div>
+
+                <div class="game-info">
+
+                    <strong>
+                        قائمشهر × بابل
+                    </strong>
+
+                    <span>
+                        مسابقات جوانان
+                    </span>
+
+                </div>
+
+                <div class="hall">
+                    سالن ورزشی بابل
+                </div>
+
+                <div class="status">
+                    ۱۸:۰۰
+                </div>
+
+            </div>
+
+
+            <div class="game">
+
+                <div class="date">
+                    ۳۰ مهر
+                </div>
+
+                <div class="game-info">
+
+                    <strong>
+                        قائمشهر × آمل
+                    </strong>
+
+                    <span>
+                        لیگ استان
+                    </span>
+
+                </div>
+
+                <div class="hall">
+                    سالن قائمشهر
+                </div>
+
+                <div class="status">
+                    ۱۶:۳۰
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTICES
+===================================================== -->
+
+<section class="gray" id="notices">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                ANNOUNCEMENTS
+            </span>
+
+            <h2>
+                اطلاعیه‌ها
+            </h2>
+
+            <p>
+                اطلاعیه‌های رسمی هیئت
+            </p>
+
+        </div>
+
+        <div class="notice-list">
+
+            <div class="notice">
+
+                <div>
+
+                    <h3>
+                        ثبت‌نام رده‌های پایه آغاز شد
+                    </h3>
+
+                    <p>
+                        علاقه‌مندان می‌توانند برای شرکت در
+                        تمرینات رده‌های پایه ثبت‌نام کنند.
+                    </p>
+
+                </div>
+
+                <span class="notice-date">
+                    ۱۵ مهر ۱۴۰۵
+                </span>
+
+            </div>
+
+
+            <div class="notice">
+
+                <div>
+
+                    <h3>
+                        تغییر ساعت تمرین تیم جوانان
+                    </h3>
+
+                    <p>
+                        زمان تمرین روز سه‌شنبه به ساعت ۱۸ تغییر کرد.
+                    </p>
+
+                </div>
+
+                <span class="notice-date">
+                    ۱۲ مهر ۱۴۰۵
+                </span>
+
+            </div>
+
+
+            <div class="notice">
+
+                <div>
+
+                    <h3>
+                        برگزاری تست انتخابی بازیکنان
+                    </h3>
+
+                    <p>
+                        تست انتخابی بازیکنان مستعد در سالن هیئت برگزار می‌شود.
+                    </p>
+
+                </div>
+
+                <span class="notice-date">
+                    ۸ مهر ۱۴۰۵
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     REGISTER
+===================================================== -->
+
+<section class="register" id="register">
+
+    <div class="container">
+
+        <div class="register-box">
+
+            <div class="register-text">
+
+                <h2>
+                    به تیم ما ملحق شو
+                </h2>
+
+                <p>
+                    اگر علاقه‌مند به هندبال هستی،
+                    مشخصات خود را ثبت کن تا با شما تماس بگیریم.
+                </p>
+
+            </div>
+
+            <form class="form"
+                  onsubmit="submitRegister(event)">
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        placeholder="نام و نام خانوادگی"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        placeholder="شماره تماس"
+                        required
+                    >
+
+                    <input
+                        type="number"
+                        placeholder="سن"
+                    >
+
+                    <select>
+
+                        <option>
+                            انتخاب رده
+                        </option>
+
+                        <option>
+                            نونهالان
+                        </option>
+
+                        <option>
+                            نوجوانان
+                        </option>
+
+                        <option>
+                            جوانان
+                        </option>
+
+                        <option>
+                            بزرگسالان
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <textarea
+                    placeholder="سابقه ورزشی یا توضیحات..."
+                ></textarea>
+
+                <button class="submit">
+                    ارسال درخواست
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section id="gallery">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                GALLERY
+            </span>
+
+            <h2>
+                گالری تصاویر
+            </h2>
+
+            <p>
+                تصاویر مسابقات و فعالیت‌های هیئت
+            </p>
+
+        </div>
+
+        <div class="gallery">
+
+            <div>
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=85">
+            </div>
+
+            <div>
+                <img src="https://images.unsplash.com/photo-1574623452334-1e0ac2c3ccb4?auto=format&fit=crop&w=700&q=85">
+            </div>
+
+            <div>
+                <img src="https://images.unsplash.com/photo-1518065896235-a4c93e088e7b?auto=format&fit=crop&w=700&q=85">
+            </div>
+
+            <div>
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=700&q=85">
+            </div>
+
+            <div>
+                <img src="https://images.unsplash.com/photo-1518407613690-d9fc990e795f?auto=format&fit=crop&w=700&q=85">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="gray" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                CONTACT
+            </span>
+
+            <h2>
+                ارتباط با هیئت
+            </h2>
+
+            <p>
+                برای دریافت اطلاعات بیشتر با ما در تماس باشید
+            </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <h3>
+                    اطلاعات تماس
+                </h3>
+
+                <div class="contact-item">
+
+                    <strong>
+                        📍 آدرس
+                    </strong>
+
+                    قائمشهر، آدرس دفتر هیئت هندبال
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>
+                        📞 تلفن
+                    </strong>
+
+                    ۰۱۱-۱۲۳۴۵۶۷۸
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>
+                        📱 موبایل
+                    </strong>
+
+                    ۰۹۱۱-۱۲۳-۴۵۶۷
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>
+                        📧 ایمیل
+                    </strong>
+
+                    info@example.ir
+
+                </div>
+
+            </div>
+
+
+            <div class="map">
+
+                <div>
+
+                    <div style="font-size:45px;">
+                        📍
+                    </div>
+
+                    <h2>
+                        قائمشهر
+                    </h2>
+
+                    <p>
+                        دفتر هیئت هندبال
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer">
+
+        <p>
+            © ۱۴۰۵
+            <strong>
+                هیئت هندبال قائمشهر
+            </strong>
+            — تمامی حقوق محفوظ است.
+        </p>
+
+        <p>
+            ساخته شده برای توسعه هندبال قائمشهر
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+
+        document
+            .getElementById("nav")
+            .classList.toggle("active");
+
+    }
+
+
+    function submitRegister(event) {
+
+        event.preventDefault();
+
+        alert(
+            "درخواست شما با موفقیت ثبت شد."
+        );
+
+        event.target.reset();
+
+    }
+
+
+    document
+        .querySelectorAll("nav a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .getElementById("nav")
+                        .classList.remove("active");
+
+                }
+            );
+
+        });
+
+</script>
+
+</body>
+
+</html>
