@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>هیئت هندبال قائمشهر | Handball Qaemshahr</title>
+
+    <meta name="description"
+          content="وب‌سایت رسمی هیئت هندبال قائمشهر | اخبار، مسابقات، تیم‌ها، نتایج و ثبت‌نام">
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --navy: #071a3d;
+            --navy-2: #0b2858;
+            --navy-3: #10366f;
+            --white: #ffffff;
+            --light: #f4f7fb;
+            --gray: #64748b;
+            --border: #e5eaf2;
+            --green: #16a34a;
+            --red: #dc2626;
+        }
+
+        body {
+            background: var(--white);
+            color: #172033;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(7, 26, 61, .94);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .navbar {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 12px;
+            background: white;
+            color: var(--navy);
+            display: grid;
+            place-items: center;
+            font-size: 21px;
+            font-weight: 900;
+        }
+
+        .logo small {
+            display: block;
+            color: #a9bddc;
+            font-size: 10px;
+            font-weight: normal;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #dce7f7;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .nav-btn {
+            padding: 9px 17px;
+            background: white;
+            color: var(--navy);
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 720px;
+            padding-top: 78px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7,26,61,.97),
+                    rgba(7,26,61,.78),
+                    rgba(7,26,61,.45)
+                ),
+                url("https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.04);
+            left: -120px;
+            bottom: -180px;
+        }
+
+        .hero-content {
+            min-height: 642px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            max-width: 690px;
+            color: white;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 14px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 30px;
+            color: #dbeafe;
+            background: rgba(255,255,255,.06);
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .badge span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #4ade80;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 72px);
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #bcd3f6;
+        }
+
+        .hero p {
+            color: #d0daea;
+            max-width: 620px;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #eaf1fb;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.35);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .stats {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 45px rgba(7,26,61,.12);
+            overflow: hidden;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 27px 15px;
+            border-left: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-left: 0;
+        }
+
+        .stat strong {
+            display: block;
+            color: var(--navy);
+            font-size: 28px;
+        }
+
+        .stat span {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        /* =====================================================
+           GENERAL SECTION
+        ===================================================== */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-head {
+            margin-bottom: 45px;
+        }
+
+        .section-head.center {
+            text-align: center;
+        }
+
+        .section-label {
+            color: var(--navy-3);
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .section-head h2 {
+            color: var(--navy);
+            font-size: 34px;
+            margin-bottom: 7px;
+        }
+
+        .section-head p {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           NEWS
+        ===================================================== */
+
+        .news {
+            background: var(--light);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .news-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(7,26,61,.1);
+        }
+
+        .news-image {
+            height: 210px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .news-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-date {
+            color: var(--navy-3);
+            font-size: 11px;
+        }
+
+        .news-content h3 {
+            color: var(--navy);
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .news-content p {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* =====================================================
+           TEAMS
+        ===================================================== */
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .team-card {
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: white;
+            transition: .3s;
+        }
+
+        .team-card:hover {
+            border-color: var(--navy-3);
+            transform: translateY(-5px);
+        }
+
+        .team-icon {
+            width: 65px;
+            height: 65px;
+            margin: auto;
+            display: grid;
+            place-items: center;
+            background: var(--navy);
+            color: white;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        .team-card h3 {
+            color: var(--navy);
+            margin: 15px 0 5px;
+        }
+
+        .team-card p {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        /* =====================================================
+           MATCHES
+        ===================================================== */
+
+        .matches {
+            background: var(--light);
+        }
+
+        .match-list {
+            display: grid;
+            gap: 13px;
+        }
+
+        .match {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 22px;
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .team-name {
+            font-weight: bold;
+            color: var(--navy);
+        }
+
+        .team-name:last-child {
+            text-align: left;
+        }
+
+        .match-center {
+            text-align: center;
+        }
+
+        .match-center strong {
+            display: block;
+            color: var(--navy);
+            font-size: 20px;
+        }
+
+        .match-center span {
+            color: var(--gray);
+            font-size: 10px;
+        }
+
+        .match-status {
+            display: inline-block;
+            padding: 3px 9px;
+            border-radius: 20px;
+            background: #dcfce7;
+            color: var(--green);
+            font-size: 10px;
+            margin-top: 4px;
+        }
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 430px;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            color: var(--navy);
+            font-size: 36px;
+            line-height: 1.4;
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .checks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .check {
+            background: var(--light);
+            padding: 12px;
+            border-radius: 8px;
+            color: var(--navy);
+            font-size: 12px;
+        }
+
+        .check span {
+            margin-left: 6px;
+            color: var(--green);
+        }
+
+        /* =====================================================
+           COACHES
+        ===================================================== */
+
+        .coaches {
+            background: var(--light);
+        }
+
+        .coaches-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .coach {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .coach-image {
+            height: 250px;
+        }
+
+        .coach-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .coach-info {
+            padding: 18px;
+        }
+
+        .coach-info h3 {
+            color: var(--navy);
+            font-size: 17px;
+        }
+
+        .coach-info span {
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        /* =====================================================
+           GALLERY
+        ===================================================== */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-auto-rows: 200px;
+            gap: 12px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        /* =====================================================
+           REGISTER
+        ===================================================== */
+
+        .register {
+            background: var(--navy);
+            color: white;
+        }
+
+        .register-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .register-text h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .register-text p {
+            color: #b9c7dc;
+            font-size: 14px;
+        }
+
+        .form {
+            background: white;
+            padding: 28px;
+            border-radius: 15px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            padding: 13px;
+            outline: none;
+            color: #172033;
+            background: white;
+            font-size: 12px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--navy);
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+            margin-top: 12px;
+        }
+
+        .form .btn {
+            margin-top: 12px;
+            background: var(--navy);
+            color: white;
+            width: 100%;
+        }
+
+        /* =====================================================
+           SPONSORS
+        ===================================================== */
+
+        .sponsors {
+            background: var(--light);
+        }
+
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .sponsor {
+            height: 90px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            color: #8190a6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-box {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .contact-box h3 {
+            color: var(--navy);
+            margin-bottom: 22px;
+        }
+
+        .contact-item {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--navy);
+            margin-bottom: 3px;
+        }
+
+        .map {
+            height: 100%;
+            min-height: 300px;
+            border-radius: 14px;
+            background:
+                linear-gradient(rgba(7,26,61,.82),rgba(7,26,61,.82)),
+                url("https://images.unsplash.com/photo-1524666041070-9e7b2c4c0f50?auto=format&fit=crop&w=1200&q=80");
+            background-size: cover;
+            display: grid;
+            place-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .map strong {
+            font-size: 24px;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #04122c;
+            color: #aebbd0;
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            font-size: 12px;
+            color: #aebbd0;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 7px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 11px;
+            color: #74839b;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .teams-grid,
+            .coaches-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sponsors-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .news-card:last-child {
+                display: none;
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            .navbar {
+                height: 70px;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                background: var(--navy);
+                display: none;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                border-top: 1px solid rgba(255,255,255,.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .nav-btn {
+                text-align: center;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero-content {
+                min-height: 570px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-left: 0;
+            }
+
+            .stat:nth-child(1),
+            .stat:nth-child(2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .about-grid,
+            .register-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .register-text {
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 28px, 1180px);
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .stats {
+                margin-top: -30px;
+            }
+
+            .news-grid,
+            .teams-grid,
+            .coaches-grid,
+            .sponsors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-card:last-child {
+                display: block;
+            }
+
+            .match {
+                grid-template-columns: 1fr 80px 1fr;
+                padding: 14px;
+                font-size: 11px;
+            }
+
+            .match-center strong {
+                font-size: 17px;
+            }
+
+            .about-text h2,
+            .register-text h2,
+            .section-head h2 {
+                font-size: 28px;
+            }
+
+            .checks,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 210px;
+            }
+
+            .gallery-item:first-child {
+                grid-column: auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero .buttons {
+                flex-direction: column;
+            }
+
+            .hero .btn {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-icon">🤾</div>
+
+            <div>
+                هیئت هندبال قائمشهر
+                <small>Qaemshahr Handball Association</small>
+            </div>
+
+        </a>
+
+        <nav id="nav">
+
+            <a href="#home">خانه</a>
+            <a href="#news">اخبار</a>
+            <a href="#teams">تیم‌ها</a>
+            <a href="#matches">مسابقات</a>
+            <a href="#gallery">گالری</a>
+            <a href="#about">درباره ما</a>
+            <a href="#contact" class="nav-btn">تماس با ما</a>
+
+        </nav>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <div class="badge">
+                <span></span>
+                هیئت هندبال قائمشهر
+            </div>
+
+            <h1>
+                یک شهر،
+                <span>یک تیم</span>
+                <br>
+                یک عشق؛ هندبال
+            </h1>
+
+            <p>
+                پایگاهی برای رشد استعدادهای هندبال قائمشهر،
+                معرفی تیم‌ها، برگزاری مسابقات و ساختن آینده‌ای
+                قدرتمند برای ورزشکاران جوان شهر.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#teams" class="btn btn-primary">
+                    مشاهده تیم‌ها
+                </a>
+
+                <a href="#register" class="btn btn-outline">
+                    ثبت‌نام در هیئت
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<div class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <strong>۱۲+</strong>
+                <span>تیم فعال</span>
+            </div>
+
+            <div class="stat">
+                <strong>۲۵۰+</strong>
+                <span>ورزشکار</span>
+            </div>
+
+            <div class="stat">
+                <strong>۱۵+</strong>
+                <span>مربی و کادر</span>
+            </div>
+
+            <div class="stat">
+                <strong>۲۰+</strong>
+                <span>مسابقه سالانه</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NEWS
+===================================================== -->
+
+<section class="news" id="news">
+
+    <div class="container">
+
+        <div class="section-head center">
+
+            <div class="section-label">LATEST NEWS</div>
+
+            <h2>آخرین اخبار</h2>
+
+            <p>
+                تازه‌ترین اخبار و اطلاعیه‌های هیئت هندبال قائمشهر
+            </p>
+
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=80">
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        ۱۵ مهر ۱۴۰۵
+                    </span>
+
+                    <h3>
+                        آغاز مسابقات رده جوانان قائمشهر
+                    </h3>
+
+                    <p>
+                        مسابقات رده جوانان با حضور تیم‌های مختلف
+                        در سالن ورزشی قائمشهر برگزار خواهد شد.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        ادامه خبر ←
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    <img src="https://images.unsplash.com/photo-1574623452334-1e0ac2c3ccb4?auto=format&fit=crop&w=900&q=80">
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        ۱۰ مهر ۱۴۰۵
+                    </span>
+
+                    <h3>
+                        استعدادیابی بازیکنان نوجوان
+                    </h3>
+
+                    <p>
+                        فرآیند استعدادیابی و شناسایی بازیکنان
+                        مستعد نوجوان آغاز شد.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        ادامه خبر ←
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    <img src="https://images.unsplash.com/photo-1518065896235-a4c93e088e7b?auto=format&fit=crop&w=900&q=80">
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        ۵ مهر ۱۴۰۵
+                    </span>
+
+                    <h3>
+                        برگزاری دوره آموزشی مربیان
+                    </h3>
+
+                    <p>
+                        دوره آموزشی تخصصی برای مربیان و علاقه‌مندان
+                        به مربیگری هندبال برگزار شد.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        ادامه خبر ←
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TEAMS
+===================================================== -->
+
+<section id="teams">
+
+    <div class="container">
+
+        <div class="section-head center">
+
+            <div class="section-label">OUR TEAMS</div>
+
+            <h2>تیم‌های هیئت</h2>
+
+            <p>
+                فعالیت در تمامی رده‌های سنی
+            </p>
+
+        </div>
+
+        <div class="teams-grid">
+
+            <div class="team-card">
+                <div class="team-icon">👦</div>
+                <h3>نونهالان</h3>
+                <p>استعدادیابی و آموزش پایه</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">🏃</div>
+                <h3>نوجوانان</h3>
+                <p>پرورش بازیکنان آینده</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">🔥</div>
+                <h3>جوانان</h3>
+                <p>رقابت در سطح استانی</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">🏆</div>
+                <h3>بزرگسالان</h3>
+                <p>تیم رقابتی و حرفه‌ای</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MATCHES
+===================================================== -->
+
+<section class="matches" id="matches">
+
+    <div class="container">
+
+        <div class="section-head center">
+
+            <div class="section-label">MATCHES</div>
+
+            <h2>مسابقات و نتایج</h2>
+
+            <p>
+                برنامه آخرین و نزدیک‌ترین مسابقات
+            </p>
+
+        </div>
+
+        <div class="match-list">
+
+            <div class="match">
+
+                <div class="team-name">
+                    قائمشهر
+                </div>
+
+                <div class="match-center">
+
+                    <strong>۲۸ - ۲۴</strong>
+
+                    <span>
+                        سالن ورزشی قائمشهر
+                    </span>
+
+                    <div class="match-status">
+                        پایان یافته
+                    </div>
+
+                </div>
+
+                <div class="team-name">
+                    ساری
+                </div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="team-name">
+                    قائمشهر
+                </div>
+
+                <div class="match-center">
+
+                    <strong>جمعه</strong>
+
+                    <span>
+                        ساعت ۱۷:۰۰
+                    </span>
+
+                    <div class="match-status"
+                         style="background:#dbeafe;color:#1d4ed8;">
+                        پیش‌رو
+                    </div>
+
+                </div>
+
+                <div class="team-name">
+                    بابل
+                </div>
+
+            </div>
+
+
+            <div class="match">
+
+                <div class="team-name">
+                    قائمشهر
+                </div>
+
+                <div class="match-center">
+
+                    <strong>--</strong>
+
+                    <span>
+                        ۲۵ مهر
+                    </span>
+
+                    <div class="match-status"
+                         style="background:#dbeafe;color:#1d4ed8;">
+                        پیش‌رو
+                    </div>
+
+                </div>
+
+                <div class="team-name">
+                    آمل
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=85">
+
+            </div>
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    ABOUT US
+                </div>
+
+                <h2>
+                    ساختن آینده هندبال
+                    <br>
+                    از قائمشهر
+                </h2>
+
+                <p>
+                    هیئت هندبال قائمشهر با هدف توسعه ورزش هندبال،
+                    کشف استعدادهای جوان و ایجاد مسیر حرفه‌ای برای
+                    ورزشکاران فعالیت می‌کند.
+                </p>
+
+                <p>
+                    ما تلاش می‌کنیم با برگزاری مسابقات، دوره‌های
+                    آموزشی و برنامه‌های استعدادیابی، زمینه رشد
+                    نسل جدید ورزشکاران را فراهم کنیم.
+                </p>
+
+                <div class="checks">
+
+                    <div class="check">
+                        <span>✓</span>
+                        استعدادیابی
+                    </div>
+
+                    <div class="check">
+                        <span>✓</span>
+                        آموزش حرفه‌ای
+                    </div>
+
+                    <div class="check">
+                        <span>✓</span>
+                        مسابقات منظم
+                    </div>
+
+                    <div class="check">
+                        <span>✓</span>
+                        رشد بازیکنان
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COACHES
+===================================================== -->
+
+<section class="coaches">
+
+    <div class="container">
+
+        <div class="section-head center">
+
+            <div class="section-label">COACHING STAFF</div>
+
+            <h2>مربیان و کادر فنی</h2>
+
+            <p>
+                تیمی برای پرورش نسل آینده هندبال
+            </p>
+
+        </div>
+
+        <div class="coaches-grid">
+
+            <div class="coach">
+
+                <div class="coach-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80">
+                </div>
+
+                <div class="coach-info">
+                    <h3>علی رضایی</h3>
+                    <span>سرمربی تیم بزرگسالان</span>
+                </div>
+
+            </div>
+
+
+            <div class="coach">
+
+                <div class="coach-image">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80">
+                </div>
+
+                <div class="coach-info">
+                    <h3>محمد احمدی</h3>
+                    <span>مربی رده جوانان</span>
+                </div>
+
+            </div>
+
+
+            <div class="coach">
+
+                <div class="coach-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80">
+                </div>
+
+                <div class="coach-info">
+                    <h3>سارا کریمی</h3>
+                    <span>مربی رده نوجوانان</span>
+                </div>
+
+            </div>
+
+
+            <div class="coach">
+
+                <div class="coach-image">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80">
+                </div>
+
+                <div class="coach-info">
+                    <h3>مریم حسینی</h3>
+                    <span>مربی استعدادیابی</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section id="gallery">
+
+    <div class="container">
+
+        <div class="section-head center">
+
+            <div class="section-label">GALLERY</div>
+
+            <h2>گالری تصاویر</h2>
+
+            <p>
+                لحظات ماندگار هندبال قائمشهر
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=85">
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1574623452334-1e0ac2c3ccb4?auto=format&fit=crop&w=800&q=85">
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518407613690-d9fc990e795f?auto=format&fit=crop&w=800&q=85">
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518065896235-a4c93e088e7b?auto=format&fit=crop&w=800&q=85">
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=85">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     REGISTER
+===================================================== -->
+
+<section class="register" id="register">
+
+    <div class="container">
+
+        <div class="register-grid">
+
+            <div class="register-text">
+
+                <div class="section-label"
+                     style="color:#a9c4eb;">
+                    JOIN US
+                </div>
+
+                <h2>
+                    آماده‌ای وارد زمین شوی؟
+                </h2>
+
+                <p>
+                    اگر به هندبال علاقه‌مند هستی، فرم ثبت‌نام را
+                    تکمیل کن تا کارشناسان هیئت با شما تماس بگیرند.
+                </p>
+
+            </div>
+
+            <div class="form">
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        placeholder="نام و نام خانوادگی"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        placeholder="شماره تماس"
+                        required
+                    >
+
+                    <input
+                        type="number"
+                        placeholder="سن"
+                    >
+
+                    <select>
+
+                        <option>
+                            رده سنی
+                        </option>
+
+                        <option>
+                            نونهالان
+                        </option>
+
+                        <option>
+                            نوجوانان
+                        </option>
+
+                        <option>
+                            جوانان
+                        </option>
+
+                        <option>
+                            بزرگسالان
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <textarea
+                    placeholder="توضیحات یا سابقه ورزشی..."
+                ></textarea>
+
+                <button
+                    class="btn"
+                    onclick="registerPlayer(event)"
+                >
+                    ارسال درخواست ثبت‌نام
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SPONSORS
+===================================================== -->
+
+<section class="sponsors">
+
+    <div class="container">
+
+        <div class="section-head center">
+
+            <div class="section-label">
+                OUR PARTNERS
+            </div>
+
+            <h2>
+                حامیان و اسپانسرها
+            </h2>
+
+            <p>
+                همراهانی که از توسعه هندبال حمایت می‌کنند
+            </p>
+
+        </div>
+
+        <div class="sponsors-grid">
+
+            <div class="sponsor">SPONSOR 01</div>
+            <div class="sponsor">SPONSOR 02</div>
+            <div class="sponsor">SPONSOR 03</div>
+            <div class="sponsor">SPONSOR 04</div>
+            <div class="sponsor">SPONSOR 05</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-head center">
+
+            <div class="section-label">
+                CONTACT US
+            </div>
+
+            <h2>
+                با ما در ارتباط باشید
+            </h2>
+
+            <p>
+                برای اطلاعات بیشتر با هیئت هندبال قائمشهر تماس بگیرید.
+            </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-box">
+
+                <h3>
+                    اطلاعات تماس
+                </h3>
+
+                <div class="contact-item">
+
+                    <strong>📍 آدرس</strong>
+
+                    قائمشهر، آدرس دفتر هیئت هندبال
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>📞 تلفن</strong>
+
+                    ۰۱۱-۱۲۳۴۵۶۷۸
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>📱 موبایل</strong>
+
+                    ۰۹۱۱-۱۲۳-۴۵۶۷
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>✉ ایمیل</strong>
+
+                    info@example.ir
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>🕐 ساعات پاسخگویی</strong>
+
+                    شنبه تا پنجشنبه | ۹ تا ۲۰
+
+                </div>
+
+            </div>
+
+
+            <div class="map">
+
+                <div>
+
+                    <strong>📍 قائمشهر</strong>
+
+                    <p>
+                        محل دفتر هیئت هندبال
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>
+                    هیئت هندبال قائمشهر
+                </h3>
+
+                <p>
+                    مرجع اخبار، مسابقات، تیم‌ها و فعالیت‌های
+                    هندبال قائمشهر.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    لینک‌های سریع
+                </h3>
+
+                <div class="footer-links">
+
+                    <a href="#news">اخبار</a>
+                    <a href="#teams">تیم‌ها</a>
+                    <a href="#matches">مسابقات</a>
+                    <a href="#gallery">گالری</a>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    شبکه‌های اجتماعی
+                </h3>
+
+                <div class="footer-links">
+
+                    <a href="#">اینستاگرام</a>
+                    <a href="#">تلگرام</a>
+                    <a href="#">واتساپ</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © ۱۴۰۵ تمامی حقوق برای هیئت هندبال قائمشهر محفوظ است.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    function toggleMenu() {
+
+        document
+            .getElementById("nav")
+            .classList.toggle("active");
+
+    }
+
+
+    /* =====================================================
+       REGISTER
+    ===================================================== */
+
+    function registerPlayer(event) {
+
+        event.preventDefault();
+
+        alert(
+            "درخواست شما با موفقیت ثبت شد.\n" +
+            "کارشناسان هیئت به‌زودی با شما تماس خواهند گرفت."
+        );
+
+    }
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU AFTER CLICK
+    ===================================================== */
+
+    document.querySelectorAll("nav a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document
+                .getElementById("nav")
+                .classList.remove("active");
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
